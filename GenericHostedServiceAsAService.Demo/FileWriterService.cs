@@ -8,7 +8,7 @@ namespace IHostedServiceAsAService
 {
     public class FileWriterService : IHostedService, IDisposable
     {
-        private const string Path = @"d:\TestApplication.txt";
+        private const string Path = @"C:\Users\leonidm\AppData\Local\Temp\TestApplication.txt";
 
         private Timer _timer;
       
@@ -18,7 +18,7 @@ namespace IHostedServiceAsAService
                 (e) => WriteTimeToFile(),
                 null,
                 TimeSpan.Zero,
-                TimeSpan.FromMinutes(1));
+                TimeSpan.FromSeconds(30));
 
             return Task.CompletedTask;
         }
